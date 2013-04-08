@@ -1,4 +1,6 @@
 SesusoPos::Application.routes.draw do
+  resources :restaurants
+
   authenticated :user do
     root :to => 'home#index'
   end
