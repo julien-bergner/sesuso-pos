@@ -1,4 +1,6 @@
 SesusoPos::Application.routes.draw do
+  resources :orders
+
   resources :restaurant_tables
 
   resources :restaurants
