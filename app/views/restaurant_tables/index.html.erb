@@ -1,0 +1,27 @@
+<h1>Listing restaurant_tables</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Caption</th>
+    <th>Restaurant</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @restaurant_tables.each do |restaurant_table| %>
+  <tr>
+    <td><%= restaurant_table.number %></td>
+    <td><%= restaurant_table.caption %></td>
+    <td><%= restaurant_table.restaurant_id %></td>
+    <td><%= link_to 'Show', restaurant_table %></td>
+    <td><%= link_to 'Edit', edit_restaurant_table_path(restaurant_table) %></td>
+    <td><%= link_to 'Destroy', restaurant_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Restaurant table', new_restaurant_table_path %>

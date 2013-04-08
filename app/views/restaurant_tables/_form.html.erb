@@ -1,0 +1,13 @@
+<%= simple_form_for(@restaurant_table) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :number %>
+    <%= f.input :caption %>
+    <%= f.input :restaurant_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
