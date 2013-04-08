@@ -1,4 +1,6 @@
 SesusoPos::Application.routes.draw do
+  resources :products
+
   resources :categories
 
   resources :orders
