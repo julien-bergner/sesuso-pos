@@ -1,0 +1,23 @@
+<div data-role="header">
+  <%= link_to "Back", products_path, :"data-icon" => "arrow-l", :class => "ui-btn-left" %>
+  <h1><%= @product.caption %></h1>
+  <%= link_to "Edit", edit_product_path(@product), :"data-icon" => "gear", :class => "ui-btn-right" %>
+
+  <div data-role="navbar">
+    <ul>
+      <li>
+        <%= link_to @product, :confirm => 'Are you sure?', :method => :delete, :"data-icon" => "delete", :"data-iconpos" => "top" do %>
+          Delete
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div data-role="content">
+  <p id="notice"><%= @product.caption %></p>
+  <p>
+    <%= @product.price %>
+  </p>
+</div>

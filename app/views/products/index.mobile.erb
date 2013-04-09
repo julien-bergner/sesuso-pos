@@ -1,0 +1,16 @@
+<div data-role="header">
+  <h1>Products</h1>
+</div>
+
+<div data-role="content">
+  <ul data-role="listview">
+  <% @products.each do |product| %>
+    <li>
+    <%= link_to product do %>
+      <h2><%= product.caption %></h2>
+      <%= product.price %>
+    <% end %>
+    </li>
+  <% end %>
+  </ul>
+</div>
