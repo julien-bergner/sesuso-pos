@@ -4,24 +4,25 @@
     <h1>Café Carat</h1>
   </div>
 
-  <div data-role="content" style="text-align: center;">
+  <div data-role="content">
+     <div id="form-container">
+        <%= form_tag('/receiveSelectedTable') do |f| %>
 
-    <%= form_tag('/receiveSelectedTable') do |f| %>
+            <fieldset>
 
-        <fieldset>
+              <div data-role="fieldcontain">
+                <%= label_tag :tableNumberField, "Tisch auswählen:", :id => "table_number_field_label" %>
+                <br/>
+                <%= phone_field_tag :tableNumber, "", :id => "table_number_field", :class => "ui-input-text ui-body-c ui-corner-all ui-shadow-inset ui-focus" %>
+              </div>
 
-          <div data-role="fieldcontain">
-            <%= label_tag :tableNumberField, "Tisch auswählen:", :id => "table_number_field_label" %>
-            <br/>
-            <%= phone_field_tag :tableNumber, "", :id => "table_number_field", :class => "ui-input-text ui-body-c ui-corner-all ui-shadow-inset ui-focus" %>
-          </div>
+            </fieldset>
 
-        </fieldset>
+            <button type="submit" data-theme="a" name="submit" value="submit-value">Los</button>
+            <!-- <a data-role="button" class="ui-btn-plain ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Los</span></span></a> -->
 
-        <button type="submit" data-theme="a" name="submit" value="submit-value">Los</button>
-        <!-- <a data-role="button" class="ui-btn-plain ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Los</span></span></a> -->
-
-    <% end %>
+        <% end %>
+     </div>
   </div>
 </div>
 
