@@ -1,9 +1,9 @@
-<div data-theme="a" data-role="header">
-  <h3>
-    Café Carat
-  </h3>
-</div>
-<%= form_tag('/receiveSelectedTable') do |f| %>
+  <div data-theme="a" data-role="header">
+    <h3>
+      Café Carat
+    </h3>
+  </div>
+  <%= form_tag('/receiveSelectedTable') do |f| %>
     <div data-role="content">
       <div data-role="fieldcontain">
         <%= label_tag(:tableNumberField, "Tisch auswählen:") %>
@@ -11,4 +11,4 @@
       </div>
       <input type="submit" data-inline="true" value="Los" data-mini="true" />
     </div>
-<% end %>
+  <% end %>
