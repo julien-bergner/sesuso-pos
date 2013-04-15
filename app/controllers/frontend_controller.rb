@@ -10,13 +10,17 @@ class FrontendController < ApplicationController
   end
 
   def receiveSelectedTable
-      @selectedTable = params[:tableNumber]
-      redirect_to :action => "selectOrderItem", :selectedTable => @selectedTable
+      @selectedTableNumber = params[:tableNumber]
+      @restaurant_table = RestaurantTable.find_by_number(@selectedTableNumber)
+      @order = @restaurant_table.orders.first
+
+      redirect_to order_path(@order)
+      #redirect_to :action => "selectOrderItem", :selectedTableNumber => @selectedTableNumber
   end
 
   def selectOrderItem
 
-    @selectedTable = params[:selectedTable]
+    @selectedTableNumber = params[:selectedTableNumber]
     respond_to do |format|
       format.html
       format.mobile
