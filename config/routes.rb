@@ -1,4 +1,7 @@
 SesusoPos::Application.routes.draw do
+
+  match "/selectTable" => "frontend#selectTable", :as => :selectTable
+
   resources :order_items
 
   resources :products
@@ -17,4 +20,5 @@ SesusoPos::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+
 end
