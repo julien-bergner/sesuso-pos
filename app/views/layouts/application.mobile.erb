@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mobile Version!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "jquery.mobile.min" %>
-  <%= stylesheet_link_tag    "jquery.mobile.min.css" %>
-  <!-- <%= stylesheet_link_tag "ios-inspired-theme" %>  -->
-
-
+  <meta charset="utf-8" />
+  <title>Cafe Carat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" rel="stylesheet" />
+  <%= stylesheet_link_tag "ios-inspired-theme" %>
+  <%= stylesheet_link_tag "application" %>
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script>
+      // all dialog buttons should close their parent dialog
+      $(".ui-dialog button").live("click", function() {
+          $("[data-role='dialog']").dialog("close");
+      });
+      $(document).on("mobileinit", function(){
+          $.mobile.defaultPageTransition = "slide";
+      });
+  </script>
+  <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+  <style>
+      #footerTabs {
+          background: #FFF -webkit-radial-gradient(circle, #FFF, #dee2e4);
+      }
+      .ui-listview sup {
+          font-size: 0.6em;
+          color: #cc0000;
+      }
+  </style>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-<div data-role="page">
+
   <%= yield %>
-</div>
+
 </body>
 </html>

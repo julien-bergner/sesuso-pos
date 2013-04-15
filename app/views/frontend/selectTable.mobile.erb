@@ -1,14 +1,28 @@
-<div data-theme="a" data-role="header">
-  <h3>
-    Café Carat
-  </h3>
+<div data-role="page" id="formElements">
+
+  <div data-role="header" data-position="fixed">
+    <h1>Café Carat</h1>
+  </div>
+
+  <div data-role="content" style="text-align: center;">
+
+    <%= form_tag('/receiveSelectedTable') do |f| %>
+
+        <fieldset>
+
+          <div data-role="fieldcontain">
+            <%= label_tag :tableNumberField, "Tisch auswählen:", :id => "table_number_field_label" %>
+            <br/>
+            <%= phone_field_tag :tableNumber, "", :id => "table_number_field", :class => "ui-input-text ui-body-c ui-corner-all ui-shadow-inset ui-focus" %>
+          </div>
+
+        </fieldset>
+
+        <button type="submit" data-theme="a" name="submit" value="submit-value">Los</button>
+        <!-- <a data-role="button" class="ui-btn-plain ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Los</span></span></a> -->
+
+    <% end %>
+  </div>
 </div>
-<%= form_tag('/receiveSelectedTable') do |f| %>
-    <div data-role="content">
-      <div data-role="fieldcontain">
-        <%= label_tag(:tableNumberField, "Tisch auswählen:") %>
-        <input name="tableNumber" id="tableNumberField" placeholder="" value="" type="tel" data-mini="true" />
-      </div>
-      <input type="submit" data-inline="true" value="Los" data-mini="true" />
-    </div>
-<% end %>
+
+
