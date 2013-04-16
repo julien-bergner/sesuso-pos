@@ -20,7 +20,7 @@ class FrontendController < ApplicationController
 
   def selectOrderItem
 
-    @selectedTableNumber = params[:selectedTableNumber]
+    @selectedTableNumber = params[:tableNumber]
     respond_to do |format|
       format.html
       format.mobile
