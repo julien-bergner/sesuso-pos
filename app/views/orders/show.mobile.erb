@@ -2,8 +2,8 @@
 
   <div data-role="header" data-position="fixed">
     <h1><%= @order.restaurant_table.caption %></h1>
-    <%= link_to "Tischauswahl", :selectTable, { "data-icon" => "back" } %>
-    <%= link_to "&nbsp;".html_safe, {:controller => "frontend", :action => "selectOrderItem", :tableNumber => @order.restaurant_table.number}, { "data-icon" => "plus" } %>
+    <%= link_to "Bezahlen", :selectTable %>
+    <%= link_to "&nbsp;".html_safe, {:controller => "frontend", :action => "selectCategory", :tableNumber => @order.restaurant_table.number}, { "data-icon" => "plus" } %>
   </div>
 
   <div data-role="content">
@@ -13,7 +13,7 @@
           <li>
             <%= link_to order_item do %>
                 <h2><%= order_item.product.caption %></h2>
-                <%= order_item.product.price %>
+                <%= order_item.product.price + " Euro" %>
             <% end %>
           </li>
       <% end %>
