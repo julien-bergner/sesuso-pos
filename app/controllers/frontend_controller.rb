@@ -18,6 +18,18 @@ class FrontendController < ApplicationController
       #redirect_to :action => "selectOrderItem", :selectedTableNumber => @selectedTableNumber
   end
 
+  def selectCategory
+
+    @categories = Category.all
+
+  end
+
+  def receiveSelectedCategory
+    @selectedCategory = params[:selectedCategory]
+    redirect_to :action => "selectOrderItem", :selectedCategory => @selectedCategory
+  end
+
+
   def selectOrderItem
 
     @selectedTableNumber = params[:tableNumber]
@@ -27,5 +39,7 @@ class FrontendController < ApplicationController
     end
 
   end
+
+
 
 end

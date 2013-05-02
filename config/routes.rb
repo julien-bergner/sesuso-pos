@@ -3,6 +3,10 @@ SesusoPos::Application.routes.draw do
   match "/selectTable" => "frontend#selectTable", :as => :selectTable
   match "/receiveSelectedTable" => "frontend#receiveSelectedTable", :as => :receiveSelectedTable
   match "/selectOrderItem" => "frontend#selectOrderItem", :as => :selectOrderItem
+  match "/selectCategory" => "frontend#selectCategory", :as => :selectCategory
+  match "/receiveSelectedCategory" => "frontend#receiveSelectedCategory", :as => :receiveSelectedCategory
+
+
 
 
   resources :order_items

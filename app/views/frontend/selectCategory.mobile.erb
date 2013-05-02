@@ -1,0 +1,65 @@
+<div data-role="page" id="selectTable">
+
+  <div data-role="header" data-position="fixed">
+    <h1>Kategorie wählen</h1>
+  </div>
+
+
+  <div data-role="content">
+
+
+    <div class="ui-grid-b">
+      <% @categories.in_groups_of(3).each do |groupOfCategory| %>
+
+          <% unless groupOfCategory[0].nil? then %>
+              <a href=<%= url_for(:controller => "frontend", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategory[0].id}") %>>
+                <div class="ui-block-a">
+                  <div class="category-box">
+                    <div class="category-caption-text category-div">
+                      <%= groupOfCategory[0].caption %>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          <% else %>
+              <div class="ui-block-a">
+              </div>
+          <% end %>
+
+          <% unless groupOfCategory[1].nil? then %>
+              <a href=<%= url_for(:controller => "frontend", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategory[1].id}") %>>
+                <div class="ui-block-b">
+                  <div class="category-box">
+                    <div class="category-caption-text category-div">
+                      <%= groupOfCategory[1].caption %>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          <% else %>
+              <div class="ui-block-b">
+              </div>
+          <% end %>
+
+          <% unless groupOfCategory[2].nil? then %>
+              <a href=<%= url_for(:controller => "frontend", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategory[2].id}") %>>
+                <div class="ui-block-c">
+                  <div class="category-box">
+                    <div class="category-caption-text category-div">
+                      <%= groupOfCategory[2].caption %>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          <% else %>
+              <div class="ui-block-c">
+              </div>
+          <% end %>
+
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
