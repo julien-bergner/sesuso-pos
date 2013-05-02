@@ -1,5 +1,6 @@
 SesusoPos::Application.routes.draw do
 
+  match "/startAddOrderItemWorkflow" => "add_order_item_workflow#start", :as => :startAddOrderItemWorkflow
   match "/selectTable" => "add_order_item_workflow#selectTable", :as => :selectTable
   match "/receiveSelectedTable" => "add_order_item_workflow#receiveSelectedTable", :as => :receiveSelectedTable
   match "/selectOrderItem" => "add_order_item_workflow#selectOrderItem", :as => :selectOrderItem

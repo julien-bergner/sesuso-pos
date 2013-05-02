@@ -1,12 +1,8 @@
 class AddOrderItemWorkflowController < ApplicationController
 
-  def selectTable
-
-    respond_to do |format|
-      format.html
-      format.mobile
-    end
-
+  def start
+    @orderId = params[:order_id]
+    redirect_to :action => "selectCategory", :order_id => @orderId
   end
 
   def receiveSelectedTable
