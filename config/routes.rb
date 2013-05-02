@@ -1,11 +1,11 @@
 SesusoPos::Application.routes.draw do
 
-  match "/selectTable" => "frontend#selectTable", :as => :selectTable
-  match "/receiveSelectedTable" => "frontend#receiveSelectedTable", :as => :receiveSelectedTable
-  match "/selectOrderItem" => "frontend#selectOrderItem", :as => :selectOrderItem
-  match "/selectCategory" => "frontend#selectCategory", :as => :selectCategory
-  match "/receiveSelectedCategory" => "frontend#receiveSelectedCategory", :as => :receiveSelectedCategory
-  match "/selectProduct" => "frontend#selectProduct", :as => :selectProduct;
+  match "/selectTable" => "add_order_item_workflow#selectTable", :as => :selectTable
+  match "/receiveSelectedTable" => "add_order_item_workflow#receiveSelectedTable", :as => :receiveSelectedTable
+  match "/selectOrderItem" => "add_order_item_workflow#selectOrderItem", :as => :selectOrderItem
+  match "/selectCategory" => "add_order_item_workflow#selectCategory", :as => :selectCategory
+  match "/receiveSelectedCategory" => "add_order_item_workflow#receiveSelectedCategory", :as => :receiveSelectedCategory
+  match "/selectProduct" => "add_order_item_workflow#selectProduct", :as => :selectProduct
 
 
 
