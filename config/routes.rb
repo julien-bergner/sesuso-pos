@@ -5,6 +5,7 @@ SesusoPos::Application.routes.draw do
   match "/selectOrderItem" => "frontend#selectOrderItem", :as => :selectOrderItem
   match "/selectCategory" => "frontend#selectCategory", :as => :selectCategory
   match "/receiveSelectedCategory" => "frontend#receiveSelectedCategory", :as => :receiveSelectedCategory
+  match "/selectProduct" => "frontend#selectProduct", :as => :selectProduct;
 
 
 

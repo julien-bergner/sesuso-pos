@@ -1,0 +1,22 @@
+<div data-role="page" id="selectTable">
+
+  <div data-role="header" data-position="fixed">
+    <h1>Produkt wählen</h1>
+  </div>
+
+
+  <div data-role="content">
+
+    <ul data-role="listview">
+      <% @products.each do |product| %>
+          <li>
+            <%= link_to product do %>
+                <h2><%= "Nr. #{product.number} - #{product.caption}" %></h2>
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+
+
+  </div>
+</div>
