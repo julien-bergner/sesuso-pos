@@ -25,13 +25,14 @@ class FrontendController < ApplicationController
   end
 
   def receiveSelectedCategory
-    @selectedCategory = params[:selectedCategory]
-    redirect_to :action => "selectProduct", :selectedCategory => @selectedCategory
+    @selectedCategoryId = params[:selectedCategory]
+    redirect_to :action => "selectProduct", :selectedCategoryId => @selectedCategoryId
   end
 
   def selectProduct
-    @selectedCategory = params[:selectedCategory]
-    @products = Product.find_all_by_category_id(@selectedCategory)
+    @selectedCategoryId = params[:selectedCategoryId]
+    @selectedCategory = Category.find(@selectedCategoryId)
+    @products = Product.find_all_by_category_id(@selectedCategoryId)
 
     respond_to do |format|
       format.html
