@@ -5,14 +5,7 @@ class AddOrderItemWorkflowController < ApplicationController
     redirect_to :action => "selectCategory", :order_id => @orderId
   end
 
-  def receiveSelectedTable
-    @selectedTableNumber = params[:tableNumber]
-    @restaurant_table = RestaurantTable.find_by_number(@selectedTableNumber)
-    @order = @restaurant_table.orders.first
 
-    redirect_to order_path(@order)
-    #redirect_to :action => "selectOrderItem", :selectedTableNumber => @selectedTableNumber
-  end
 
   def selectCategory
 

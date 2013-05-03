@@ -1,12 +1,21 @@
 SesusoPos::Application.routes.draw do
 
   match "/startAddOrderItemWorkflow" => "add_order_item_workflow#start", :as => :startAddOrderItemWorkflow
-  match "/selectTable" => "add_order_item_workflow#selectTable", :as => :selectTable
-  match "/receiveSelectedTable" => "add_order_item_workflow#receiveSelectedTable", :as => :receiveSelectedTable
-  match "/selectOrderItem" => "add_order_item_workflow#selectOrderItem", :as => :selectOrderItem
   match "/selectCategory" => "add_order_item_workflow#selectCategory", :as => :selectCategory
   match "/receiveSelectedCategory" => "add_order_item_workflow#receiveSelectedCategory", :as => :receiveSelectedCategory
   match "/selectProduct" => "add_order_item_workflow#selectProduct", :as => :selectProduct
+
+  match "/startAddOrderWorkflow" => "frontend#startAddOrderWorkflow", :as => :startAddOrderWorkflow
+  match "/selectTable" => "frontend#selectTable", :as => :selectTable
+  match "/receiveSelectedTable" => "frontend#receiveSelectedTable", :as => :receiveSelectedTable
+  match "/createOrderIfNotExisting" => "frontend#createOrderIfNotExisting", :as => :createOrderIfNotExisting
+
+  match "/showOrder" => "frontend#showOrder", :as => :showOrder
+  match "/showAllOrders" => "frontend#showAllOrders", :as => :showAllOrders
+
+
+
+
 
 
 

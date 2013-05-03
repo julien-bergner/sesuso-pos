@@ -1,0 +1,23 @@
+<div data-role="page" id="show-all-orders">
+
+  <div data-role="header" data-position="fixed">
+    <div class="header-box"><h3>Alle offenen Bestellungen:</h3></div>
+    <%= link_to "Neu", {:controller => "frontend", :action => "selectTable"}, { :class => "ui-btn-right", "data-icon" => "plus",  "data-iconpos" => "top", "data-role" => "button" } %>
+
+  </div>
+
+  <div data-role="content">
+
+    <ul data-role="listview">
+      <% @orders.each do |order| %>
+          <li>
+            <%= link_to order do %>
+                <h2>Bestellung <%= order.id %> an Tisch <%= order.restaurant_table.number %></h2>
+
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>

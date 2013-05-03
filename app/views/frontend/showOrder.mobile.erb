@@ -3,7 +3,7 @@
   <div data-role="header" data-position="fixed">
     <h1><%= @order.restaurant_table.caption %></h1>
     <%= link_to "Bezahlen", :selectTable %>
-    <%= link_to "&nbsp;".html_safe, {:controller => "add_order_item_workflow", :action => "selectCategory", :order_id => @order.id}, { "data-icon" => "plus" } %>
+    <%= link_to "", {:controller => "add_order_item_workflow", :action => "selectCategory", :order_id => @order.id}, { "data-icon" => "plus", "data-iconpos" => "notext" } %>
   </div>
 
   <div data-role="content">
@@ -11,10 +11,7 @@
     <ul data-role="listview">
       <% @order.order_items.each do |order_item| %>
           <li>
-            <%= link_to order_item do %>
-                <h2><%= order_item.product.caption %></h2>
-                <%= "#{order_item.product.price} Euro" %>
-            <% end %>
+
           </li>
       <% end %>
     </ul>
