@@ -12,7 +12,7 @@
       <% @categories.in_groups_of(3).each do |groupOfCategories| %>
 
           <% unless groupOfCategories[0].nil? then %>
-              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[0].id}") %>>
+              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[0].id}", :order_id => @orderId) %>>
                 <div class="ui-block-a">
                   <div class="category-box">
                     <div class="category-caption-text category-div">
@@ -27,7 +27,7 @@
           <% end %>
 
           <% unless groupOfCategories[1].nil? then %>
-              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[1].id}") %>>
+              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[1].id}", :order_id => @orderId) %>>
                 <div class="ui-block-b">
                   <div class="category-box">
                     <div class="category-caption-text category-div">
@@ -42,7 +42,7 @@
           <% end %>
 
           <% unless groupOfCategories[2].nil? then %>
-              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[2].id}") %>>
+              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[2].id}", :order_id => @orderId) %>>
                 <div class="ui-block-c">
                   <div class="category-box">
                     <div class="category-caption-text category-div">

@@ -11,7 +11,8 @@
     <ul data-role="listview">
       <% @orders.each do |order| %>
           <li>
-            <%= link_to order do %>
+            <%= link_to url_for(:controller => "frontend", :action => "showOrder", :order_id => order.id) do %>
+
                 <h2>Bestellung <%= order.id %> an Tisch <%= order.restaurant_table.number %></h2>
 
             <% end %>

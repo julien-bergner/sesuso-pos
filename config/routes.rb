@@ -4,6 +4,7 @@ SesusoPos::Application.routes.draw do
   match "/selectCategory" => "add_order_item_workflow#selectCategory", :as => :selectCategory
   match "/receiveSelectedCategory" => "add_order_item_workflow#receiveSelectedCategory", :as => :receiveSelectedCategory
   match "/selectProduct" => "add_order_item_workflow#selectProduct", :as => :selectProduct
+  match "/receiveSelectedProduct" => "add_order_item_workflow#receiveSelectedProduct", :as => :receiveSelectedProduct
 
   match "/startAddOrderWorkflow" => "frontend#startAddOrderWorkflow", :as => :startAddOrderWorkflow
   match "/selectTable" => "frontend#selectTable", :as => :selectTable

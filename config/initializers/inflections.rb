@@ -13,3 +13,18 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'Shisha', 'Shishas'
+
+end
+
+#Menüs	Show	Edit	Destroy
+#Softdrinks	Show	Edit	Destroy
+#Shakes	Show	Edit	Destroy
+#Cocktails	Show	Edit	Destroy
+#Heisse Getränke	Show	Edit	Destroy
+#Speisen	Show	Edit	Destroy
+#Süsser Genuss	Show	Edit	Destroy
+#Shishas	Show	Edit	Destroy
+

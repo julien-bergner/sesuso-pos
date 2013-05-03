@@ -10,7 +10,7 @@
     <ul data-role="listview">
       <% @products.each do |product| %>
           <li>
-            <%= link_to product do %>
+            <%= link_to url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedProduct", :product_id => product.id, :order_id => @orderId) do %>
                 <h2><%= "Nr. #{product.number} - #{product.caption}" %></h2>
             <% end %>
           </li>
@@ -20,3 +20,4 @@
 
   </div>
 </div>
+
