@@ -38,6 +38,28 @@ class FrontendController < ApplicationController
     end
   end
 
+  def increaseOrderItemQuantity
+    @order_item_id = params[:order_item_id]
+    orderItem = OrderItem.find(@order_item_id)
+    orderItem.quantity += 1
+    orderItem.save
+    redirect_to :action => "showOrder", :order_id => orderItem.order.id
+  end
+
+  def decreaseOrderItemQuantity
+    @order_item_id = params[:order_item_id]
+    orderItem = OrderItem.find(@order_item_id)
+    if orderItem.quantity < 2
+      orderItem.delete
+    else
+      orderItem.quantity -= 1
+      orderItem.save
+    end
+
+    redirect_to :action => "showOrder", :order_id => orderItem.order.id
+  end
+
+
   def showOrder
     @order_id = params[:order_id]
     @order = Order.find(@order_id)

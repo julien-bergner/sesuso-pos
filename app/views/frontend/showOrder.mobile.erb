@@ -3,15 +3,22 @@
   <div data-role="header" data-position="fixed">
     <h1><%= @order.restaurant_table.caption %></h1>
     <%= link_to "Bezahlen", "#" %>
-    <%= link_to "Neu", {:controller => "add_order_item_workflow", :action => "selectCategory", :order_id => @order.id}, { "data-icon" => "plus", "data-iconpos" => "notext" } %>
+    <%= link_to "Neu", {:controller => "add_order_item_workflow", :action => "selectCategory", :order_id => @order.id}, {"data-role" => "button", "data-icon" => "plus", "data-iconpos" => "notext"} %>
   </div>
 
   <div data-role="content">
 
     <ul data-role="listview">
-      <% @order.order_items.each do |order_item| %>
+      <% @order.order_items.sort!.each do |order_item| %>
           <li>
-            <%= "#{order_item.product.category.caption.singularize}: #{order_item.product.caption} - #{order_item.quantity}" %>
+            <div>
+              <span>
+                <%= link_to "Neu", {:controller => "frontend", :action => "decreaseOrderItemQuantity", :order_item_id => order_item.id}, {"data-role" => "button", "data-inline" => "true", "data-icon" => "minus", "data-iconpos" => "notext"} %>
+                <span data-inline="true"><%= "#{order_item.quantity}x" %></span>
+                <%= link_to "Neu", {:controller => "frontend", :action => "increaseOrderItemQuantity", :order_item_id => order_item.id}, {"data-role" => "button", "data-inline" => "true", "data-icon" => "plus", "data-iconpos" => "notext"} %>
+              </span>
+              <%= "#{order_item.product.category.caption.singularize}: #{order_item.product.caption}" %>
+            </div>
           </li>
       <% end %>
     </ul>
