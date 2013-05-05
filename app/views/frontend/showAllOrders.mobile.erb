@@ -1,7 +1,8 @@
 <div data-role="page" id="show-all-orders">
 
+
   <div data-role="header" data-position="fixed">
-    <span class="header-box" data-inline="true"><h4>Alle offenen Bestellungen:</h4></span>
+    <h4>Alle offenen Bestellungen:</h4>
     <%= link_to "Neu", {:controller => "frontend", :action => "selectTable"}, { "data-role" => "button", "data-inline" => "true", :class => "ui-btn-right", "data-icon" => "plus",  "data-iconpos" => "notext", "data-role" => "button" } %>
 
   </div>
@@ -13,7 +14,7 @@
           <li>
             <%= link_to url_for(:controller => "frontend", :action => "showOrder", :order_id => order.id) do %>
 
-                <h2>Bestellung <%= order.id %> an Tisch <%= order.restaurant_table.number %></h2>
+                <h2>Bestellung an Tisch <%= order.restaurant_table.number %></h2>
 
             <% end %>
           </li>
@@ -22,5 +23,3 @@
 
   </div>
 </div>
-
-<li data-role="list-divider">R</li>
