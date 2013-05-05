@@ -1,8 +1,8 @@
 <div data-role="page" id="show-all-orders">
 
   <div data-role="header" data-position="fixed">
-    <div class="header-box"><h3>Alle offenen Bestellungen:</h3></div>
-    <%= link_to "Neu", {:controller => "frontend", :action => "selectTable"}, { :class => "ui-btn-right", "data-icon" => "plus",  "data-iconpos" => "top", "data-role" => "button" } %>
+    <span class="header-box" data-inline="true"><h4>Alle offenen Bestellungen:</h4></span>
+    <%= link_to "Neu", {:controller => "frontend", :action => "selectTable"}, { "data-role" => "button", "data-inline" => "true", :class => "ui-btn-right", "data-icon" => "plus",  "data-iconpos" => "notext", "data-role" => "button" } %>
 
   </div>
 
@@ -22,3 +22,5 @@
 
   </div>
 </div>
+
+<li data-role="list-divider">R</li>

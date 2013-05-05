@@ -63,11 +63,13 @@ class FrontendController < ApplicationController
   def showOrder
     @order_id = params[:order_id]
     @order = Order.find(@order_id)
+    @order_items_grouped_by_categories = @order.order_items.group_by { |orderItem| orderItem.product.category }
   end
 
   def showAllOrders
 
     @orders = Order.all
+
 
   end
 
