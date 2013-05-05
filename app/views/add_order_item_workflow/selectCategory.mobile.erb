@@ -1,7 +1,8 @@
 <div data-role="page" id="select-category">
 
   <div data-role="header" data-position="fixed">
-    <div class="header-box"><h2>Kategorie wählen:</h2></div>
+    <%= link_to "Zurück", url_for(:controller => "frontend", :action => "showOrder", :order_id => @orderId) %>
+    <h2>Kategorie wählen:</h2>
   </div>
 
 

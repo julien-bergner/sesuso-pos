@@ -1,7 +1,8 @@
 <div data-role="page" id="select-product">
 
   <div data-role="header" data-position="fixed">
-    <div class="header-box"><h3>Alle <%= @selectedCategory.caption %>:</h3></div>
+    <%= link_to "Zurück", url_for(:controller => "add_order_item_workflow", :action => "selectCategory", :order_id => @orderId) %>
+    <h3>Alle <%= @selectedCategory.caption %>:</h3>
   </div>
 
 
