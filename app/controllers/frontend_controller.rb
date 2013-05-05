@@ -24,18 +24,20 @@ class FrontendController < ApplicationController
     @restaurantTable = RestaurantTable.find_by_number(@selectedTableNumber)
 
     if @restaurantTable.nil?
-      redirect_to :action => "startAddOrderWorkflow", :flash => "Dieser Tisch existiert nicht."
-    else
-      @orders = Order.find_all_by_restaurant_table_id(@restaurantTable.id)
-      @orders.select! { |order| !order.is_completed }
-      if @orders.count == 1
-        @order = @orders.first
-      else
-        @order = Order.create!(:restaurant_table_id => @restaurantTable.id, :is_completed => false)
-      end
-      redirect_to :action => "showOrder", :order_id => @order.id
-
+      @restaurantTable = RestaurantTable.new
+      @restaurantTable.number = @selectedTableNumber
+      @restaurantTable.caption = "Tisch #{@selectedTableNumber}"
+      @restaurantTable.save
     end
+    @orders = Order.find_all_by_restaurant_table_id(@restaurantTable.id)
+    @orders.select! { |order| !order.is_completed }
+    if @orders.count == 1
+      @order = @orders.first
+    else
+      @order = Order.create!(:restaurant_table_id => @restaurantTable.id, :is_completed => false)
+    end
+    redirect_to :action => "showOrder", :order_id => @order.id
+
   end
 
   def increaseOrderItemQuantity
