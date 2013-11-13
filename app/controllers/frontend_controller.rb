@@ -75,4 +75,11 @@ class FrontendController < ApplicationController
 
   end
 
+  def checkout
+    @order_id = params[:order_id]
+    @order = Order.find(@order_id)
+    @order_items_grouped_by_categories = @order.order_items.group_by { |orderItem| orderItem.product.category }
+
+  end
+
 end

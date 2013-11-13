@@ -1,0 +1,38 @@
+<div data-role="page" id="checkout">
+
+  <div data-role="header" data-position="fixed">
+    <h1><%= @order.restaurant_table.caption %></h1>
+  </div>
+
+  <div data-role="content">
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        <div>
+          <ul data-role="listview">
+            <% @order_items_grouped_by_categories.sort.each do |category, order_items| %>
+                <li data-role="list-divider"><%= category.caption %></li>
+                <% for order_item in order_items %>
+                    <li>
+                      <div>
+              <span>
+                <span data-inline="true"><%= "#{order_item.quantity}x" %></span>
+              </span>
+                        <%= "Nr. #{order_item.product.number} - #{order_item.product.caption}" %>
+                      </div>
+                    </li>
+                <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="ui-block-b">
+
+      </div>
+    </div>
+  </div>
+
+
+  <div data-theme="a" data-role="footer" data-position="fixed" data-id="footer">
+
+  </div>
+</div>
