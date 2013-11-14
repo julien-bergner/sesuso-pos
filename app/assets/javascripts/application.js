@@ -10,19 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery_mobile_subpage
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
 
 
-$("a").bind("click", function()
-{
-    if (this.href)
-    {
-        // Ensure that loading a new page doesn't open
-        // a new window
-        location.href = this.href;
-        return false;
-    }
-});
