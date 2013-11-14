@@ -13,37 +13,28 @@
       <% @categories.in_groups_of(3).each do |groupOfCategories| %>
 
           <% unless groupOfCategories[0].nil? then %>
-              <div class="ui-block-a">
+
               <a href="<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[0].id}", :order_id => @orderId) %>" data-role="button" data-inline="true">
-                      <%= groupOfCategories[0].caption %>
+                <%= groupOfCategories[0].caption %>
 
               </a>
-              </div>
-          <% else %>
-              <div class="ui-block-a">
-              </div>
+
           <% end %>
 
           <% unless groupOfCategories[1].nil? then %>
-              <div class="ui-block-b">
+
               <a href="<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[1].id}", :order_id => @orderId) %>" data-role="button" data-inline="true">
-                           <%= groupOfCategories[1].caption %>
+                <%= groupOfCategories[1].caption %>
               </a>
-              </div>
-          <% else %>
-              <div class="ui-block-b">
-              </div>
+
           <% end %>
 
           <% unless groupOfCategories[2].nil? then %>
-              <div class="ui-block-c">
+
               <a href="<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[2].id}", :order_id => @orderId) %>" data-role="button" data-inline="true">
-                      <%= groupOfCategories[2].caption %>
+                <%= groupOfCategories[2].caption %>
               </a>
-              </div>
-          <% else %>
-              <div class="ui-block-c">
-              </div>
+
           <% end %>
 
 
