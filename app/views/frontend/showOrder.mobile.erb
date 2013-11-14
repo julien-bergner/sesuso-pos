@@ -9,7 +9,7 @@
       <ul>
         <li><%= link_to "Alle Tische", :showAllOrders, { "data-role" => "button", "data-inline" => "true", "data-icon" => "arrow-l" }  %></li>
         <li><%= link_to "Bezahlen", {:controller => "frontend", :action => "checkout", :order_id => @order.id}, { "data-role" => "button", "data-inline" => "true", "data-icon" => "check" }  %></li>
-        <li> <%= link_to "Neu", {:controller => "add_order_item_workflow", :action => "deliverMultiplePage", :order_id => @order.id}, { "data-role" => "button", "data-inline" => "true", "data-icon" => "plus" } %></li>
+        <li> <%= link_to "Neu", {:controller => "add_order_item_workflow", :action => "deliverMultiplePage", :order_id => @order.id}, { "data-ajax" => "false", "data-role" => "button", "data-inline" => "true", "data-icon" => "plus" } %></li>
       </ul>
     </div><!-- /navbar -->
   </div>
