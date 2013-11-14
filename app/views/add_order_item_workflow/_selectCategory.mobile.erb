@@ -13,7 +13,7 @@
 
           <% unless groupOfCategories[0].nil? then %>
               <div class="ui-block-a">
-              <a href="<%= "#select-product-of-category-#{groupOfCategories[0].id}" %>" data-role="button">
+              <a href="<%= "#select-product-of-category-#{groupOfCategories[0].id}" %>" data-role="button" data-ajax="false">
                 <div style="padding: 15px; white-space: normal;"><%= groupOfCategories[0].caption %></div>
 
               </a>
@@ -25,7 +25,7 @@
 
           <% unless groupOfCategories[1].nil? then %>
               <div class="ui-block-b">
-                <a href="<%= "#select-product-of-category-#{groupOfCategories[1].id}" %>" data-role="button">
+                <a href="<%= "#select-product-of-category-#{groupOfCategories[1].id}" %>" data-role="button" data-ajax="false">
                 <div style="padding: 15px; white-space: normal;"><%= groupOfCategories[1].caption %></div>
               </a>
               </div>
