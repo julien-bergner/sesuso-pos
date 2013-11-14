@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <title>Cafe Carat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" rel="stylesheet" />
-  <link rel="apple-touch-icon-precomposed" href=<%= url_for("/carat114x114.png") %> />
-  <link rel="apple-touch-startup-image" href=<%= url_for("/carat320x460.png") %> />
+  <link href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" rel="stylesheet"/>
+  <link rel="apple-touch-icon-precomposed" href=<%= url_for("/carat114x114.png") %>/>
+  <link rel="apple-touch-startup-image" href=<%= url_for("/carat320x460.png") %>/>
 
   <%= stylesheet_link_tag "application_mobile" %>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <%= javascript_include_tag "fastclick" %>
   <script>
       // all dialog buttons should close their parent dialog
-      $(".ui-dialog button").live("click", function() {
+      $(".ui-dialog button").live("click", function () {
           $("[data-role='dialog']").dialog("close");
       });
-      $(document).on("mobileinit", function(){
+      $(document).on("mobileinit", function () {
           $.mobile.defaultPageTransition = "slide";
       });
   </script>
@@ -25,6 +26,7 @@
       #footerTabs {
           background: #FFF -webkit-radial-gradient(circle, #FFF, #dee2e4);
       }
+
       .ui-listview sup {
           font-size: 0.6em;
           color: #cc0000;
@@ -33,9 +35,9 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
-
-  <%= yield %>
-
+<body onload="initFastButtons();">
+  <span id="fastclick">
+    <%= yield %>
+  </span> <!-- end fastclick -->
 </body>
 </html>
