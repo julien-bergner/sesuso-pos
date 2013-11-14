@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+$("a").bind("click", function()
+{
+    if (this.href)
+    {
+        // Ensure that loading a new page doesn't open
+        // a new window
+        location.href = this.href;
+        return false;
+    }
+});
