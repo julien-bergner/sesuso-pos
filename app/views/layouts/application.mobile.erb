@@ -11,7 +11,7 @@
 
   <%= stylesheet_link_tag "application_mobile" %>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <%= javascript_include_tag "fastclick" %>
+
   <script>
       // all dialog buttons should close their parent dialog
       $(".ui-dialog button").live("click", function () {
@@ -35,9 +35,9 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body onload="initFastButtons();">
-  <span id="fastclick">
+<body>
+
     <%= yield %>
-  </span> <!-- end fastclick -->
+
 </body>
 </html>
