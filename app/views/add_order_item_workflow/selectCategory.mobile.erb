@@ -13,45 +13,34 @@
       <% @categories.in_groups_of(3).each do |groupOfCategories| %>
 
           <% unless groupOfCategories[0].nil? then %>
-              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[0].id}", :order_id => @orderId) %>>
-                <div class="ui-block-a">
-                  <div class="category-box">
-                    <div class="category-caption-text category-div">
+              <div class="ui-block-a">
+              <a href="<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[0].id}", :order_id => @orderId) %>" data-role="button" data-inline="true">
                       <%= groupOfCategories[0].caption %>
-                    </div>
-                  </div>
-                </div>
+
               </a>
+              </div>
           <% else %>
               <div class="ui-block-a">
               </div>
           <% end %>
 
           <% unless groupOfCategories[1].nil? then %>
-              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[1].id}", :order_id => @orderId) %>>
-                <div class="ui-block-b">
-                  <div class="category-box">
-                    <div class="category-caption-text category-div">
-                      <%= groupOfCategories[1].caption %>
-                    </div>
-                  </div>
-                </div>
+              <div class="ui-block-b">
+              <a href="<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[1].id}", :order_id => @orderId) %>" data-role="button" data-inline="true">
+                           <%= groupOfCategories[1].caption %>
               </a>
+              </div>
           <% else %>
               <div class="ui-block-b">
               </div>
           <% end %>
 
           <% unless groupOfCategories[2].nil? then %>
-              <a href=<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[2].id}", :order_id => @orderId) %>>
-                <div class="ui-block-c">
-                  <div class="category-box">
-                    <div class="category-caption-text category-div">
+              <div class="ui-block-c">
+              <a href="<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[2].id}", :order_id => @orderId) %>" data-role="button" data-inline="true">
                       <%= groupOfCategories[2].caption %>
-                    </div>
-                  </div>
-                </div>
               </a>
+              </div>
           <% else %>
               <div class="ui-block-c">
               </div>
