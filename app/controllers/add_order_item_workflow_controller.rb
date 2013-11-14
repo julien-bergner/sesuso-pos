@@ -44,5 +44,16 @@ class AddOrderItemWorkflowController < ApplicationController
     redirect_to :controller => "frontend", :action => "showOrder", :order_id => @orderId
   end
 
+  def deliverMultiplePage
+
+    @categories = Category.all
+
+    @categories_with_products = Hash.new
+    Category.all.each{ |category| @categories_with_products.store(category, category.products) }
+    @order = Order.first
+
+
+  end
+
 
 end

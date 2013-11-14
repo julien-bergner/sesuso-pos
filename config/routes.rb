@@ -1,6 +1,6 @@
 SesusoPos::Application.routes.draw do
 
-  match "/startAddOrderItemWorkflow" => "add_order_item_workflow#start", :as => :startAddOrderItemWorkflow
+  match "/addOrderItem" => "add_order_item_workflow#deliverMultiplePage", :as => :startAddOrderItemWorkflow
   match "/selectCategory" => "add_order_item_workflow#selectCategory", :as => :selectCategory
   match "/receiveSelectedCategory" => "add_order_item_workflow#receiveSelectedCategory", :as => :receiveSelectedCategory
   match "/selectProduct" => "add_order_item_workflow#selectProduct", :as => :selectProduct

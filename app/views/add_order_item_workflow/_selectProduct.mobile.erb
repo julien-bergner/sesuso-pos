@@ -1,0 +1,23 @@
+<div data-role="page" id="select-product-of-category-<%= category.id -%>">
+
+  <div data-role="header" data-position="fixed">
+    <a href="#select-category">Zurück</a>
+    <h3>Alle <%= category.caption %>:</h3>
+  </div>
+
+  <div data-role="content">
+
+    <ul data-role="listview">
+      <% category.products.each do |product| %>
+          <li>
+            <%= link_to url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedProduct", :product_id => product.id, :order_id => 1) do %>
+                <h2><%= "Nr. #{product.number} - #{product.caption}" %></h2>
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+
+
+  </div>
+</div>
+

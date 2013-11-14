@@ -1,7 +1,7 @@
 <div data-role="page" id="select-category">
 
   <div data-role="header" data-position="fixed">
-    <%= link_to "Zurück", url_for(:controller => "frontend", :action => "showOrder", :order_id => @orderId) %>
+    <%= link_to "Zurück", url_for(:controller => "frontend", :action => "showOrder", :order_id => 1) %>
     <h2><div style="white-space: normal;">Kategorie wählen:</div></h2>
   </div>
 
@@ -13,8 +13,8 @@
 
           <% unless groupOfCategories[0].nil? then %>
               <div class="ui-block-a">
-              <a href="<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[0].id}", :order_id => @orderId) %>" data-role="button">
-                <div style="white-space: normal;"><%= groupOfCategories[0].caption %></div>
+              <a href="<%= "#select-product-of-category-#{groupOfCategories[0].id}" %>" data-role="button" data-transition="pop">
+                <div style="padding: 15px; white-space: normal;"><%= groupOfCategories[0].caption %></div>
 
               </a>
               </div>
@@ -25,8 +25,8 @@
 
           <% unless groupOfCategories[1].nil? then %>
               <div class="ui-block-b">
-              <a href="<%= url_for(:controller => "add_order_item_workflow", :action => "receiveSelectedCategory", :selectedCategory => "#{groupOfCategories[1].id}", :order_id => @orderId) %>" data-role="button">
-                <div style="white-space: normal;"><%= groupOfCategories[1].caption %></div>
+                <a href="<%= "#select-product-of-category-#{groupOfCategories[1].id}" %>" data-role="button" data-transition="pop">
+                <div style="padding: 15px; white-space: normal;"><%= groupOfCategories[1].caption %></div>
               </a>
               </div>
            <% else %>

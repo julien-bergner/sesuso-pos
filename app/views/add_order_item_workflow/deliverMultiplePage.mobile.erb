@@ -1,0 +1,5 @@
+<%= render 'add_order_item_workflow/selectCategory' %>
+
+<% @categories_with_products.each_pair do |category, products| %>
+    <%= render 'add_order_item_workflow/selectProduct', :category => category, :products => products %>
+<% end %>
