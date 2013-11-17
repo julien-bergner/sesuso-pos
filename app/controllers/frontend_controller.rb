@@ -82,4 +82,25 @@ class FrontendController < ApplicationController
 
   end
 
+  def order
+    @order_id = params[:order_id]
+    @order = Order.find(@order_id)
+    @order_items_grouped_by_categories = @order.order_items.group_by { |orderItem| orderItem.product.category }.sort
+
+    #@order_items_grouped_by_categories.sort.each do |category, order_items|
+    #  for order_item in order_items
+   #
+    #  end
+   ##
+   # end
+  #         category.caption
+    #
+   ##       :order_item_id => order_item.id
+  #      {order_item.product.number} - #{order_item.product.caption}" %>
+
+
+    render json: @order.to_json(:include => :order_items, :include => categories)
+
+  end
+
 end

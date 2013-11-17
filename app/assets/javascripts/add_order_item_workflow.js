@@ -10,3 +10,13 @@ $("a").bind("click", function () {
         return false;
     }
 });
+
+
+var greatestWidth = 0;   // Stores the greatest width
+function getMaxWidth() {
+    var theWidth = $(this).width();   // Grab the current width
+
+    if( theWidth > greatestWidth) {   // If theWidth > the greatestWidth so far,
+        greatestWidth = theWidth;     //    set greatestWidth to theWidth
+    }
+}

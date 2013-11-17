@@ -18,6 +18,8 @@ SesusoPos::Application.routes.draw do
   match "/showAllOrders" => "frontend#showAllOrders", :as => :showAllOrders
   match "/checkout" => "frontend#checkout", :as => :checkout
 
+  get ':controller/:action'
+
 
 
 
