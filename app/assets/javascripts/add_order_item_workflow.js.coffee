@@ -2,6 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-class Category
+get_json: (order_id) ->
+  $.getJSON "http://localhost:3000/frontend/order.json?order_id=1" + order_id, (data) ->
+    get_json_callback(data)
 
-  constructor: (@id, @caption) ->
+get_json_callback: (data) ->
