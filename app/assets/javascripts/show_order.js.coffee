@@ -54,7 +54,7 @@ add_minus_button = () ->
 
 
 get_order_as_json = (order_id) ->
-  $.getJSON "http://localhost:3000/frontend/order.json?order_id=" + order_id, (data) ->
+  $.getJSON "http://carat.sesuso.de/frontend/order.json?order_id=" + order_id, (data) ->
     get_order_as_json_callback (data)
 
 
