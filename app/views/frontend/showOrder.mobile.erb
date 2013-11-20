@@ -16,22 +16,8 @@
 
   <div data-role="content">
 
-    <ul data-role="listview">
-      <% @order_items_grouped_by_categories.sort.each do |category, order_items| %>
-          <li data-role="list-divider"><%= category.caption %></li>
-          <% for order_item in order_items %>
-              <li>
-                <div>
-              <span>
-                <%= link_to "Neu", {:controller => "frontend", :action => "decreaseOrderItemQuantity", :order_item_id => order_item.id}, {"data-role" => "button", "data-inline" => "true", "data-icon" => "minus", "data-iconpos" => "notext"} %>
-                <span data-inline="true"><%= "#{order_item.quantity}x" %></span>
-                <%= link_to "Neu", {:controller => "frontend", :action => "increaseOrderItemQuantity", :order_item_id => order_item.id}, {"data-role" => "button", "data-inline" => "true", "data-icon" => "plus", "data-iconpos" => "notext"} %>
-              </span>
-                  <%= "Nr. #{order_item.product.number} - #{order_item.product.caption}" %>
-                </div>
-              </li>
-          <% end %>
-      <% end %>
+    <ul data-role="listview" id="show-order-listview">
+
     </ul>
 
   </div>
