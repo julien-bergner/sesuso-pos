@@ -88,17 +88,8 @@ class FrontendController < ApplicationController
     @order_items_grouped_by_categories = @order.order_items.group_by { |orderItem| orderItem.product.category }
 
     respond_to do |format|
-      format.mobile { render "frontend/order.json" }
-      format.json
+      format.any {render "frontend/order" , handler: [:jbuilder], formats: [:json] }
     end
-
-
-
-
-
-
-
-
 
   end
 
